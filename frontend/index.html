@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BarePage — Read the web, stripped clean</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="header-top">
+                <h1 class="logo">BarePage</h1>
+                <div class="header-actions">
+                    <span id="premium-badge" class="premium-badge hidden">&#9733; Premium</span>
+                    <span id="non-premium" class="usage-display">
+                        <span id="usage-counter">5 / 5</span> free today
+                        <button class="btn btn-pricing-open pricing-btn-open">Upgrade</button>
+                    </span>
+                </div>
+            </div>
+            <p class="tagline">Read the web, stripped clean.</p>
+        </header>
+
+        <main class="app-main">
+            <!-- Input Section -->
+            <section class="input-section">
+                <div class="input-group">
+                    <input
+                        type="url"
+                        id="url-input"
+                        class="url-input"
+                        placeholder="Paste a URL here…"
+                        autocomplete="url"
+                        autocapitalize="off"
+                        spellcheck="false"
+                    >
+                    <div class="button-group">
+                        <button id="btn-bloat" class="btn btn-primary">
+                            <span class="btn-icon">&#9889;</span>
+                            Remove Bloat
+                        </button>
+                        <button id="btn-ads" class="btn btn-secondary">
+                            <span class="btn-icon">&#10003;</span>
+                            Remove Ads
+                        </button>
+                    </div>
+                </div>
+                <p class="input-hint">Try a recipe, news article, or documentation page.</p>
+            </section>
+
+            <!-- Loading Indicator -->
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Fetching and cleaning…</p>
+            </div>
+
+            <!-- Error Display -->
+            <div id="error" class="error-box hidden">
+                <p class="error-message"></p>
+                <button id="dismiss-error" class="btn btn-ghost">Dismiss</button>
+            </div>
+
+            <!-- Results Section -->
+            <section id="results" class="results-section hidden">
+                <div class="results-header">
+                    <div class="results-meta">
+                        <h2 id="result-title" class="result-title"></h2>
+                        <span id="result-mode" class="result-mode-badge"></span>
+                    </div>
+                    <div class="results-actions">
+                        <a id="view-original" href="#" target="_blank" rel="noopener" class="btn btn-ghost">
+                            &#8599; View Original
+                        </a>
+                        <button id="copy-text" class="btn btn-ghost">
+                            &#128203; Copy Text
+                        </button>
+                        <button id="back-btn" class="btn btn-ghost">
+                            &#8592; New URL
+                        </button>
+                    </div>
+                </div>
+                <div id="content-display" class="content-display">
+                    <!-- Cleaned content goes here -->
+                </div>
+            </section>
+
+            <!-- Pricing CTA (shown below input on free tier) -->
+            <section id="premium-cta" class="premium-cta">
+                <p><strong>Love BarePage?</strong> Get unlimited cleanups, custom filters, and save/export for <strong>$3.99/month</strong>.</p>
+                <button class="btn btn-premium pricing-btn-open">Go Premium &#8594;</button>
+            </section>
+        </main>
+
+        <footer class="app-footer">
+            <p>BarePage &mdash; distraction-free reading.</p>
+        </footer>
+    </div>
+
+    <!-- ===== Pricing Modal ===== -->
+    <div id="pricing-modal" class="pricing-overlay hidden">
+        <div class="pricing-modal">
+            <button class="pricing-close">&times;</button>
+            <div class="pricing-header">
+                <h2>Go Premium</h2>
+                <p class="pricing-subtitle">Unlimited distraction-free reading</p>
+            </div>
+            <div class="pricing-plans">
+                <div class="pricing-plan">
+                    <h3>Free</h3>
+                    <div class="pricing-amount">$0</div>
+                    <ul class="pricing-features">
+                        <li>5 cleanups per day</li>
+                        <li>Remove Ads mode</li>
+                        <li>Remove Bloat mode</li>
+                        <li>Copy to clipboard</li>
+                    </ul>
+                    <div class="pricing-current">Current Plan</div>
+                </div>
+                <div class="pricing-plan pricing-plan-featured">
+                    <h3>Premium</h3>
+                    <div class="pricing-amount">$3.99</div>
+                    <div class="pricing-period">per month</div>
+                    <ul class="pricing-features">
+                        <li>Unlimited cleanups</li>
+                        <li>Remove Ads mode</li>
+                        <li>Remove Bloat mode</li>
+                        <li>Copy to clipboard</li>
+                        <li>Save &amp; export pages</li>
+                        <li>Custom filters</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <button class="btn btn-premium pricing-btn-upgrade">Subscribe Now</button>
+                </div>
+            </div>
+            <p class="pricing-note">Secure payment via Stripe. Cancel anytime.</p>
+        </div>
+    </div>
+
+    <script src="/app.js"></script>
+</body>
+</html>
