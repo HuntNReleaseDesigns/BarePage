@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BarePage — Read the web, stripped clean</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="landing-nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">BarePage</a>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#comparison">How It Works</a>
+                <a href="#pricing">Pricing</a>
+                <a href="/app" class="btn btn-primary nav-cta">Try It Now</a>
+            </div>
+            <button class="nav-mobile-toggle" aria-label="Menu">&#9776;</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Read the web, <span class="text-gradient">stripped clean</span></h1>
+            <p class="hero-subtitle">One click removes ads, pop-ups, and fluff from any webpage. Get straight to the content that matters — recipes, articles, docs, and more.</p>
+            <div class="hero-cta">
+                <a href="/app" class="btn btn-primary btn-lg">&#9889; Try BarePage Now</a>
+                <a href="#features" class="btn btn-ghost btn-lg">Learn More &darr;</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="hero-stat-num">100%</span>
+                    <span class="hero-stat-label">Ad-Free Reading</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-num">47KB</span>
+                    <span class="hero-stat-label">Avg. Page Savings</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-num">1&ndash;Click</span>
+                    <span class="hero-stat-label">Instant Cleanup</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before/After Comparison -->
+    <section id="comparison" class="section comparison-section">
+        <div class="section-inner">
+            <h2 class="section-title">From clutter to <span class="text-gradient">content</span></h2>
+            <p class="section-subtitle">One URL, two modes. See the difference.</p>
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <div class="comparison-label comparison-label-before">Original Page</div>
+                    <div class="comparison-demo comparison-demo-before">
+                        <div class="demo-ad-bar">&#9679; Sponsored Content</div>
+                        <div class="demo-ad-box">Ad &middot; Cookware Sale!</div>
+                        <div class="demo-content">
+                            <div class="demo-title">The Best Chocolate Cake</div>
+                            <p class="demo-narrative">I remember standing in my grandmother's kitchen on a rainy Saturday afternoon. The smell of cocoa filled the air as she pulled out her worn recipe box. This recipe has been passed down through three generations&hellip;<span class="demo-more">[more backstory&hellip;]</span></p>
+                            <div class="demo-ingredients">
+                                <strong>Ingredients:</strong>
+                                <span class="demo-ingredient">2 cups flour</span>
+                                <span class="demo-ingredient">1 cup sugar</span>
+                                <span class="demo-ingredient">3 eggs</span>
+                            </div>
+                            <div class="demo-sidebar">&#9679; You May Also Like &middot; &#9679; Newsletter Signup</div>
+                        </div>
+                    </div>
+                    <div class="comparison-meta">~568 KB &middot; 47 ads &middot; 3 popups</div>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-label comparison-label-clean">With BarePage</div>
+                    <div class="comparison-demo comparison-demo-clean">
+                        <div class="demo-content">
+                            <div class="demo-title">The Best Chocolate Cake</div>
+                            <div class="demo-ingredients">
+                                <strong>Ingredients:</strong>
+                                <ul>
+                                    <li>2 cups all-purpose flour</li>
+                                    <li>1 cup granulated sugar</li>
+                                    <li>3 large eggs, room temperature</li>
+                                    <li>&frac12; cup unsalted butter</li>
+                                    <li>1 cup milk</li>
+                                    <li>2 tsp vanilla extract</li>
+                                </ul>
+                            </div>
+                            <div class="demo-steps">
+                                <strong>Steps:</strong>
+                                <ol>
+                                    <li>Preheat oven to 350&deg;F</li>
+                                    <li>Mix dry ingredients</li>
+                                    <li>Cream butter and sugar</li>
+                                    <li>Combine and bake 30 min</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comparison-meta">~10 KB &middot; 0 ads &middot; just the recipe</div>
+                </div>
+            </div>
+            <div class="comparison-cta">
+                <a href="/app" class="btn btn-primary btn-lg">See It With Your URL &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section features-section">
+        <div class="section-inner">
+            <h2 class="section-title">Built for <span class="text-gradient">distraction-free</span> reading</h2>
+            <p class="section-subtitle">Everything you need to consume web content without the noise.</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">&#9889;</div>
+                    <h3>One-Click Cleanup</h3>
+                    <p>Paste a URL and click. No sign-up, no setup. It just works.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#10003;</div>
+                    <h3>Ad Removal</h3>
+                    <p>Strips banners, popups, iframes, and tracker pixels while keeping the layout intact.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#128213;</div>
+                    <h3>Bloat Removal</h3>
+                    <p>Extracts only the core content — article text, recipe steps, ingredients — stripping sidebars, navs, and backstories.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#128203;</div>
+                    <h3>Copy &amp; Save</h3>
+                    <p>Copy the cleaned text to your clipboard or save it for later reference.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#128274;</div>
+                    <h3>Privacy First</h3>
+                    <p>No tracking, no data collection. Your URLs stay private. We fetch and clean — that's it.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#127860;</div>
+                    <h3>Recipe Ready</h3>
+                    <p>Perfect for home cooks: skip the 2,000-word backstory and get straight to ingredients &amp; steps.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="section pricing-landing-section">
+        <div class="section-inner">
+            <h2 class="section-title">Simple, <span class="text-gradient">transparent</span> pricing</h2>
+            <p class="section-subtitle">Start free, upgrade when you need more.</p>
+            <div class="pricing-landing-grid">
+                <div class="pricing-landing-card">
+                    <h3>Free</h3>
+                    <div class="pricing-landing-amount">$0</div>
+                    <p class="pricing-landing-period">forever</p>
+                    <ul class="pricing-landing-features">
+                        <li>5 cleanups per day</li>
+                        <li>Remove Ads mode</li>
+                        <li>Remove Bloat mode</li>
+                        <li>Copy to clipboard</li>
+                    </ul>
+                    <a href="/app" class="btn btn-ghost btn-block">Get Started</a>
+                </div>
+                <div class="pricing-landing-card pricing-landing-featured">
+                    <div class="pricing-landing-badge">Most Popular</div>
+                    <h3>Premium</h3>
+                    <div class="pricing-landing-amount">$3.99</div>
+                    <p class="pricing-landing-period">per month</p>
+                    <ul class="pricing-landing-features">
+                        <li>Unlimited cleanups</li>
+                        <li>Remove Ads mode</li>
+                        <li>Remove Bloat mode</li>
+                        <li>Copy to clipboard</li>
+                        <li>Save &amp; export pages</li>
+                        <li>Custom filters</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <a href="/app" class="btn btn-primary btn-block">Subscribe Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="section-inner">
+            <h2 class="cta-title">Ready for a cleaner web?</h2>
+            <p class="cta-subtitle">Try it with any URL. No account, no email, no fuss.</p>
+            <a href="/app" class="btn btn-primary btn-xl">&#9889; Clean a Page Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="landing-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="footer-logo">BarePage</span>
+                <p class="footer-tagline">Read the web, stripped clean.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#features">Features</a>
+                <a href="#comparison">How It Works</a>
+                <a href="#pricing">Pricing</a>
+                <a href="/app">Try the Tool</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 BarePage. Distraction-free reading for everyone.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

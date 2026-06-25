@@ -75,24 +75,38 @@ async def clean_url(req: CleanRequest):
 # --- Serve static frontend ---
 
 @app.get('/', response_class=HTMLResponse)
-async def serve_index():
-    index_path = FRONTEND_DIR / 'index.html'
-    if not index_path.exists():
+async def serve_landing():
+    """Serve the marketing landing page."""
+    landing_path = FRONTEND_DIR / 'landing.html'
+    if not landing_path.exists():
+        # Fallback to index.html if landing doesn't exist yet
+        index_path = FRONTEND_DIR / 'index.html'
+        if index_path.exists():
+            return HTMLResponse(index_path.read_text(encoding='utf-8'))
         return HTMLResponse('<h1>BarePage</h1><p>Frontend not found.</p>', status_code=404)
-    return HTMLResponse(index_path.read_text(encoding='utf-8'))
+    return HTMLResponse(landing_path.read_text(encoding='utf-8'))
+
+
+@app.get('/app', response_class=HTMLResponse)
+async def serve_tool():
+    """Serve the BarePage cleaning tool SPA."""
+    tool_path = FRONTEND_DIR / 'tool.html'
+    if not tool_path.exists():
+        return HTMLResponse('<h1>BarePage</h1><p>Tool not found.</p>', status_code=404)
+    return HTMLResponse(tool_path.read_text(encoding='utf-8'))
 
 
 @app.get('/{path:path}')
 async def serve_static(path: str):
-    """Serve static frontend files (css, js, etc.) and fallback to index.html for SPA."""
+    """Serve static frontend files (css, js, etc.) with SPA fallback."""
     file_path = FRONTEND_DIR / path
 
     if file_path.exists() and file_path.is_file():
         return FileResponse(str(file_path))
 
-    # For unknown paths, serve index.html (SPA fallback)
-    index_path = FRONTEND_DIR / 'index.html'
-    if index_path.exists():
-        return HTMLResponse(index_path.read_text(encoding='utf-8'))
+    # For unknown paths under /app, serve tool.html (SPA fallback)
+    tool_path = FRONTEND_DIR / 'tool.html'
+    if tool_path.exists():
+        return HTMLResponse(tool_path.read_text(encoding='utf-8'))
     else:
         return HTMLResponse('<h1>BarePage</h1><p>Frontend not found.</p>', status_code=404)
